@@ -1,23 +1,22 @@
+package easy;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created : 3/20/2019.
- * Created by eruyuwe.
+ * Created : 3/20/2019. Created by eruyuwe.
  */
 public class RomanToInteger {
 
-
     public static void main(String[] args) {
 
-        System.out.println("Result is :" + RomanToInteger("III"));
-        System.out.println("Result is :" + RomanToInteger("IV"));
-        System.out.println("Result is :" + RomanToInteger("IX"));
-        System.out.println("Result is :" + RomanToInteger("LVIII"));
-        System.out.println("Result is :" + RomanToInteger("MCMXCIV"));
+        System.out.println("Result is :" + romanToInteger("III"));
+        System.out.println("Result is :" + romanToInteger("IV"));
+        System.out.println("Result is :" + romanToInteger("IX"));
+        System.out.println("Result is :" + romanToInteger("LVIII"));
+        System.out.println("Result is :" + romanToInteger("MCMXCIV"));
     }
 
-    public static int RomanToInteger (String s) {
+    public static int romanToInteger(String s) {
 
         Map<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
@@ -30,7 +29,7 @@ public class RomanToInteger {
 
         int len = s.length();
         int result = map.get(s.charAt(len - 1));
-        for (int i = len - 2; i >= 0; i --) {
+        for (int i = len - 2; i >= 0; i--) {
             if (map.get(s.charAt(i)) >= map.get(s.charAt(i + 1))) {
                 result += map.get(s.charAt(i));
             } else {
